@@ -27,6 +27,8 @@ func Start() {
 
 	router.HandleFunc("/customers/{customer_id}/account", ah.CreateAccount).Methods(http.MethodPost)
 
+	router.HandleFunc("/customers/{customer_id}/account/{account_id}", ah.MakeTransaction).Methods(http.MethodPost)
+
 	router.HandleFunc("/greet", greet)
 
 	router.HandleFunc("/api/time", getTime)
